@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./profile.css" />
+</head>
+<body>
+    <article data-testid="test-profile-card">
+        <figure>
+          <img
+            src="./img/moryam image.jpeg"
+            alt="Profile photo of Yusuf Moryam Oluwatosin"
+            data-testid="test-user-avatar"
+          />
+        </figure>
+  
+        <div class="content">
+          <h2 data-testid="test-user-name">Yusuf Moryam Oluwatosin</h2>
+          <p data-testid="test-user-bio">
+            A passionate Frontend Developer dedicated to crafting clean,
+            responsive, and accessible user interfaces. I love transforming ideas
+            into visually engaging and intuitive digital experiences.
+          </p>
+  
+          <div class="meta-info">
+            <div class="time" data-testid="test-user-time">
+              Current Time (ms): <span id="current-time"></span>
+            </div>
+          </div>
+  
+          <nav data-testid="test-user-social-links">
+            <a
+              href="https://github.com/Martos11"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="test-user-social-github"
+              >GitHub</a
+            >
+            <a
+              href="www.linkedin.com/in/moryam-yusuf-185930239"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="test-user-social-linkedin"
+              >LinkedIn</a
+            >
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="test-user-social-twitter"
+              >Twitter</a
+            >
+          </nav>
+  
+          <section data-testid="test-user-hobbies">
+            <h3>Hobbies</h3>
+            <ul>
+              <li>UI Design</li>
+              <li>Frontend Experimentation</li>
+              <li>Baking</li>
+              <li>Dancing</li>
+            </ul>
+          </section>
+  
+          <section data-testid="test-user-dislikes">
+            <h3>Dislikes</h3>
+            <ul>
+              <li>Unclear documentation</li>
+              <li>Messy UI</li>
+              <li>Slow websites</li>
+              <li>Accessibility issues</li>
+            </ul>
+          </section>
+        </div>
+      </article>
+  
+      <script>
+          function updateTime() {
+              const timeElement = document.getElementById("current-time");
+              timeElement.textContent = Date.now();
+          }
+  
+          // This will help me update immediately on load
+          updateTime();
+  
+          // This will help me Update every second (1000 ms)
+          setInterval(updateTime, 1000);
+  </script>
+    
+</body>
+</html>
