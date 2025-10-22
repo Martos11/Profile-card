@@ -11,6 +11,19 @@
   <link rel="stylesheet" href="./index.css" />
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="about.html">About Me</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </nav>
+    </header>
+
     <article data-testid="test-profile-card">
         <figure>
           <img
@@ -91,7 +104,119 @@
   
           // This will help me Update every second (1000 ms)
           setInterval(updateTime, 1000);
+
+          const navToggle = document.querySelector('.nav-toggle');
+          const navbarModal = document.querySelector('.navbar-modal');
+          const navLinks = document.querySelector('.navbar-modal .nav-links');
+  
+          navToggle.addEventListener('click', () => {
+              navbarModal.classList.toggle('active');
+              navLinks.style.display = navbarModal.classList.contains('active') ? 'flex' : 'none';
+          });
+
+          // Hide navbar on scroll
+          let lastScrollTop = 0;
+          const navbar = document.querySelector('.navbar');
+  
+          window.addEventListener('scroll', () => {
+              const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+              if (scrollTop > lastScrollTop) {
+                  navbar.style.top = '-70px'; // Adjust based on navbar height
+              } else {
+                  navbar.style.top = '0';
+              }
+              lastScrollTop = scrollTop;
+          });
   </script>
+
+  <style>
+    /* Updated Navbar Styles */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Center the nav buttons */
+        align-items: center;
+        padding: 1rem;
+        background-color: transparent; /* Remove the black background */
+        color: white;
+        z-index: 1000;
+        transition: top 0.3s ease;
+    }
+    
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: black; /* Change text color to black for better visibility */
+        font-weight: bold;
+    }
+    
+    .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .hamburger {
+        width: 25px;
+        height: 3px;
+        background-color: black; /* Match the text color */
+        margin: 5px 0;
+    }
+    
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background-color: white; /* Add a background for mobile view */
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 100%;
+            text-align: center;
+        }
+    
+        .nav-links.active {
+            display: flex;
+        }
+    
+        .nav-toggle {
+            display: block;
+        }
+    }
+
+    /* Add padding to the body to prevent content overlap */
+    body {
+        margin: 0;
+        padding-top: 70px; /* Adjust based on navbar height */
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Center the profile card and apply the contact page background */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #000, #e0f2fe, purple);
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    article[data-testid="test-profile-card"] {
+        margin: auto;
+    }
+  </style>
     
 </body>
 </html>

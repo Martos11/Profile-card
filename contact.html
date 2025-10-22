@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="about.html">About Me</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </nav>
+    </header>
+    <main>
+        <h1>CONTACT</h1>
+        <p class="subtitle">Feel free to reach out to us for any inquiries or collaborations!</p>
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2>Send a Message</h2>
+                <form id="contact-form">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        const form = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            let isValid = true;
+
+            // Validate Full Name
+            const name = form.name;
+            const errorName = document.getElementById('error-name');
+            if (!name.value.trim()) {
+                errorName.textContent = 'Full Name is required.';
+                isValid = false;
+            } else {
+                errorName.textContent = '';
+            }
+
+            // Validate Email
+            const email = form.email;
+            const errorEmail = document.getElementById('error-email');
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.value.trim()) {
+                errorEmail.textContent = 'Email is required.';
+                isValid = false;
+            } else if (!emailPattern.test(email.value)) {
+                errorEmail.textContent = 'Please enter a valid email address.';
+                isValid = false;
+            } else {
+                errorEmail.textContent = '';
+            }
+
+            // Validate Subject
+            const subject = form.subject;
+            const errorSubject = document.getElementById('error-subject');
+            if (!subject.value.trim()) {
+                errorSubject.textContent = 'Subject is required.';
+                isValid = false;
+            } else {
+                errorSubject.textContent = '';
+            }
+
+            // Validate Message
+            const message = form.message;
+            const errorMessage = document.getElementById('error-message');
+            if (!message.value.trim()) {
+                errorMessage.textContent = 'Message is required.';
+                isValid = false;
+            } else if (message.value.trim().length < 10) {
+                errorMessage.textContent = 'Message must be at least 10 characters.';
+                isValid = false;
+            } else {
+                errorMessage.textContent = '';
+            }
+
+            if (isValid) {
+                successMessage.hidden = false;
+                form.reset();
+            } else {
+                successMessage.hidden = true;
+            }
+        });
+
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                navbar.style.top = '-70px';
+            } else {
+                navbar.style.top = '0';
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>
