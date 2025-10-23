@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="indes.css">
 </head>
 <body>
     <header>
@@ -16,11 +16,13 @@
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
-            </button>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+              </button>
         </nav>
     </header>
 
-    <main data-testid="test-about-page">
+    <main data-testid="test-about-page" class="about-page">
         <h1>About Me</h1>
 
         <section data-testid="test-about-bio">
@@ -80,25 +82,26 @@
     <script>
 
     
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
+        // const navToggle = document.querySelector('.nav-toggle');
+        // const navLinks = document.querySelector('.nav-links');
 
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+        // navToggle.addEventListener('click', () => {
+        //     navLinks.classList.toggle('active');
+        // });
 
-        let lastScrollTop = 0;
-        const navbar = document.querySelector('.navbar');
+        // let lastScrollTop = 0;
+        // const navbar = document.querySelector('.navbar');
 
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop) {
-                navbar.style.top = '-70px';
-            } else {
-                navbar.style.top = '0';
-            }
-            lastScrollTop = scrollTop;
-        });
+        // window.addEventListener('scroll', () => {
+        //     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        //     if (scrollTop > lastScrollTop) {
+        //         navbar.style.top = '-70px';
+        //     } else {
+        //         navbar.style.top = '0';
+        //     }
+        //     lastScrollTop = scrollTop;
+        // });
     </script>
+    <script src="script.js"></script>
 </body>
 </html>

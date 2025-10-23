@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="indes.css">
 
 </head>
 <body>
@@ -16,6 +16,8 @@
                 <li><a href="about.html">About Me</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
                 <span class="hamburger"></span>
             </button>
         </nav>
@@ -45,88 +47,89 @@
         </div>
     </main>
     <script>
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
+        // const navToggle = document.querySelector('.nav-toggle');
+        // const navLinks = document.querySelector('.nav-links');
 
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+        // navToggle.addEventListener('click', () => {
+        //     navLinks.classList.toggle('active');
+        // });
 
-        const form = document.getElementById('contact-form');
-        const successMessage = document.getElementById('success-message');
+        // const form = document.getElementById('contact-form');
+        // const successMessage = document.getElementById('success-message');
 
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
+        // form.addEventListener('submit', (event) => {
+        //     event.preventDefault();
 
-            let isValid = true;
+        //     let isValid = true;
 
-            // Validate Full Name
-            const name = form.name;
-            const errorName = document.getElementById('error-name');
-            if (!name.value.trim()) {
-                errorName.textContent = 'Full Name is required.';
-                isValid = false;
-            } else {
-                errorName.textContent = '';
-            }
+        //     // Validate Full Name
+        //     const name = form.name;
+        //     const errorName = document.getElementById('error-name');
+        //     if (!name.value.trim()) {
+        //         errorName.textContent = 'Full Name is required.';
+        //         isValid = false;
+        //     } else {
+        //         errorName.textContent = '';
+        //     }
 
-            // Validate Email
-            const email = form.email;
-            const errorEmail = document.getElementById('error-email');
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!email.value.trim()) {
-                errorEmail.textContent = 'Email is required.';
-                isValid = false;
-            } else if (!emailPattern.test(email.value)) {
-                errorEmail.textContent = 'Please enter a valid email address.';
-                isValid = false;
-            } else {
-                errorEmail.textContent = '';
-            }
+        //     // Validate Email
+        //     const email = form.email;
+        //     const errorEmail = document.getElementById('error-email');
+        //     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        //     if (!email.value.trim()) {
+        //         errorEmail.textContent = 'Email is required.';
+        //         isValid = false;
+        //     } else if (!emailPattern.test(email.value)) {
+        //         errorEmail.textContent = 'Please enter a valid email address.';
+        //         isValid = false;
+        //     } else {
+        //         errorEmail.textContent = '';
+        //     }
 
             // Validate Subject
-            const subject = form.subject;
-            const errorSubject = document.getElementById('error-subject');
-            if (!subject.value.trim()) {
-                errorSubject.textContent = 'Subject is required.';
-                isValid = false;
-            } else {
-                errorSubject.textContent = '';
-            }
+            // const subject = form.subject;
+            // const errorSubject = document.getElementById('error-subject');
+            // if (!subject.value.trim()) {
+            //     errorSubject.textContent = 'Subject is required.';
+            //     isValid = false;
+            // } else {
+            //     errorSubject.textContent = '';
+            // }
 
             // Validate Message
-            const message = form.message;
-            const errorMessage = document.getElementById('error-message');
-            if (!message.value.trim()) {
-                errorMessage.textContent = 'Message is required.';
-                isValid = false;
-            } else if (message.value.trim().length < 10) {
-                errorMessage.textContent = 'Message must be at least 10 characters.';
-                isValid = false;
-            } else {
-                errorMessage.textContent = '';
-            }
+        //     const message = form.message;
+        //     const errorMessage = document.getElementById('error-message');
+        //     if (!message.value.trim()) {
+        //         errorMessage.textContent = 'Message is required.';
+        //         isValid = false;
+        //     } else if (message.value.trim().length < 10) {
+        //         errorMessage.textContent = 'Message must be at least 10 characters.';
+        //         isValid = false;
+        //     } else {
+        //         errorMessage.textContent = '';
+        //     }
 
-            if (isValid) {
-                successMessage.hidden = false;
-                form.reset();
-            } else {
-                successMessage.hidden = true;
-            }
-        });
+        //     if (isValid) {
+        //         successMessage.hidden = false;
+        //         form.reset();
+        //     } else {
+        //         successMessage.hidden = true;
+        //     }
+        // });
 
-        let lastScrollTop = 0;
-        const navbar = document.querySelector('.navbar');
+        // let lastScrollTop = 0;
+        // const navbar = document.querySelector('.navbar');
 
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop) {
-                navbar.style.top = '-70px';
-            } else {
-                navbar.style.top = '0';
-            }
-            lastScrollTop = scrollTop;
-        });
+        // window.addEventListener('scroll', () => {
+        //     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        //     if (scrollTop > lastScrollTop) {
+        //         navbar.style.top = '-70px';
+        //     } else {
+        //         navbar.style.top = '0';
+        //     }
+        //     lastScrollTop = scrollTop;
+        // });
     </script>
+      <script src="script.js"></script>
 </body>
 </html>

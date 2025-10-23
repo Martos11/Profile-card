@@ -8,7 +8,8 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="./indes.css" />
+
 </head>
 <body>
     <header>
@@ -18,8 +19,13 @@
                 <li><a href="contact.html">Contact Us</a></li>
                 <li><a href="about.html">About Me</a></li>
             </ul>
-            <button class="nav-toggle" aria-label="Toggle navigation">
+            <!-- <button class="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
+            </button> -->
+            <button class="nav-toggle" aria-label="Toggle navigation">
+              <span class="hamburger"></span>
+              <span class="hamburger"></span>
+              <span class="hamburger"></span>
             </button>
         </nav>
     </header>
@@ -92,55 +98,54 @@
           </section>
         </div>
       </article>
+      
   
       <script>
-          function updateTime() {
-              const timeElement = document.getElementById("current-time");
-              timeElement.textContent = Date.now();
-          }
+          // function updateTime() {
+          //     const timeElement = document.getElementById("current-time");
+          //     timeElement.textContent = Date.now();
+          // }
   
           // This will help me update immediately on load
-          updateTime();
+          // updateTime();
   
           // This will help me Update every second (1000 ms)
-          setInterval(updateTime, 1000);
+          // setInterval(updateTime, 1000);
 
-          const navToggle = document.querySelector('.nav-toggle');
-          const navbarModal = document.querySelector('.navbar-modal');
-          const navLinks = document.querySelector('.navbar-modal .nav-links');
+          // const navToggle = document.querySelector('.nav-toggle');
+          // const navbarModal = document.querySelector('.navbar-modal');
+          // const navLinks = document.querySelector('.navbar-modal .nav-links');
   
-          navToggle.addEventListener('click', () => {
-              navbarModal.classList.toggle('active');
-              navLinks.style.display = navbarModal.classList.contains('active') ? 'flex' : 'none';
-          });
+          // navToggle.addEventListener('click', () => {
+          //     navbarModal.classList.toggle('active');
+          //     navLinks.style.display = navbarModal.classList.contains('active') ? 'flex' : 'none';
+          // });
 
           // Hide navbar on scroll
-          let lastScrollTop = 0;
-          const navbar = document.querySelector('.navbar');
+  //         let lastScrollTop = 0;
+  //         const navbar = document.querySelector('.navbar');
   
-          window.addEventListener('scroll', () => {
-              const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-              if (scrollTop > lastScrollTop) {
-                  navbar.style.top = '-70px'; // Adjust based on navbar height
-              } else {
-                  navbar.style.top = '0';
-              }
-              lastScrollTop = scrollTop;
-          });
-  </script>
+  //         window.addEventListener('scroll', () => {
+  //             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  //             if (scrollTop > lastScrollTop) {
+  //                 navbar.style.top = '-70px'; 
+  //             } else {
+  //                 navbar.style.top = '0';
+  //             }
+  //             lastScrollTop = scrollTop;
+  //         });
+  // </script>
 
-  <style>
-    /* Updated Navbar Styles */
+  <!-- <style>
     .navbar {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         display: flex;
-        justify-content: center; /* Center the nav buttons */
-        align-items: center;
+        justify-content: center; 
         padding: 1rem;
-        background-color: transparent; /* Remove the black background */
+        background-color: transparent;
         color: white;
         z-index: 1000;
         transition: top 0.3s ease;
@@ -156,7 +161,7 @@
     
     .nav-links a {
         text-decoration: none;
-        color: black; /* Change text color to black for better visibility */
+        color: black; 
         font-weight: bold;
     }
     
@@ -170,7 +175,7 @@
     .hamburger {
         width: 25px;
         height: 3px;
-        background-color: black; /* Match the text color */
+        background-color: black; 
         margin: 5px 0;
     }
     
@@ -178,7 +183,7 @@
         .nav-links {
             display: none;
             flex-direction: column;
-            background-color: white; /* Add a background for mobile view */
+            background-color: white; 
             position: absolute;
             top: 100%;
             right: 0;
@@ -195,14 +200,14 @@
         }
     }
 
-    /* Add padding to the body to prevent content overlap */
+
     body {
         margin: 0;
-        padding-top: 70px; /* Adjust based on navbar height */
+        padding-top: 70px; 
         font-family: 'Poppins', sans-serif;
     }
 
-    /* Center the profile card and apply the contact page background */
+    
     body {
         display: flex;
         justify-content: center;
@@ -216,7 +221,8 @@
     article[data-testid="test-profile-card"] {
         margin: auto;
     }
-  </style>
+  </style> -->
+  <script src="script.js"></script>
     
 </body>
 </html>
